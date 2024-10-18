@@ -5,6 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
+    "live": "live-server",
     "build": "sass src/scss:dist/css",
     "start": "sass --watch src/scss:dist/css & live-server",
     "format": "prettier --log-level warn --write \"**/*.{js,css,md}\"",
@@ -12,7 +13,10 @@
     "lint": "eslint \"src/**/*.js\"",
     "pretest": "npm run lint",
     "prepare": "husky",
-    "test": "jest"
+    "test": "jest",
+    "cy:open": "cypress open",
+    "cy:test:run": "start-server-and-test start http://localhost:8080 cy:run",
+    "cy:test:open": "start-server-and-test start http://localhost:8080 cy:open"
   },
   "lint-staged": {
     "src/**/*.js": [
@@ -30,6 +34,8 @@
     "@babel/preset-env": "^7.25.8",
     "@eslint/js": "^9.12.0",
     "babel-jest": "^29.7.0",
+    "bootstrap": "^5.3.3",
+    "cypress": "^13.15.0",
     "eslint": "^9.12.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-jest": "^28.8.3",
