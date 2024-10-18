@@ -23,3 +23,12 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+Cypress.Commands.add("myLogin", () => {
+	cy.get("#registerForm").should("be.visible");
+	cy.wait(2000);
+	cy.get(
+		"#registerForm > div.modal-footer > button.btn.btn-outline-success",
+	).click();
+	cy.get("#loginForm").should("be.visible");
+	cy.wait(1000);
+});
