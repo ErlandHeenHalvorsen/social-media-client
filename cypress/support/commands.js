@@ -32,3 +32,16 @@ Cypress.Commands.add("myLogin", () => {
 	cy.get("#loginForm").should("be.visible");
 	cy.wait(1000);
 });
+
+Cypress.Commands.add("validLogin", () => {
+	const email = "mock@stud.noroff.no";
+	const password = "mockPassword";
+
+	cy.get("#loginEmail").type(email);
+	cy.get("#loginPassword").type(password);
+	cy.get("#loginForm > div.modal-footer > button.btn.btn-success").click({
+		timeout: 10000,
+	});
+});
+
+
