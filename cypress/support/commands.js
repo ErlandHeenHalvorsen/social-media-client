@@ -43,5 +43,3 @@ Cypress.Commands.add("validLogin", () => {
 		timeout: 10000,
 	});
 });
-
-
